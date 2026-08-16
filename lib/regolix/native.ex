@@ -10,7 +10,9 @@ defmodule Regolix.Native do
       aarch64-apple-darwin
       x86_64-apple-darwin
       x86_64-unknown-linux-gnu
+      x86_64-unknown-linux-musl
       aarch64-unknown-linux-gnu
+      aarch64-unknown-linux-musl
     ),
     # Build from source instead of downloading a precompiled NIF when
     # REGOLIX_BUILD=1 (local dev / CI). Requires a Rust toolchain.

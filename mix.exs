@@ -46,7 +46,7 @@ defmodule Regolix.MixProject do
         "Regorus" => "https://github.com/microsoft/regorus"
       },
       files:
-        ~w(lib native checksum-Elixir.Regolix.Native.exs .formatter.exs mix.exs README.md CHANGELOG.md LICENSE)
+        ~w(lib native .cargo/config.toml checksum-Elixir.Regolix.Native.exs .formatter.exs mix.exs README.md CHANGELOG.md LICENSE)
     ]
   end
 

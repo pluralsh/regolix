@@ -30,3 +30,5 @@ regolix-*.tar
 /priv/native/
 
 .private-journal/
+
+.cargo/
