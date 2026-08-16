@@ -1,8 +1,8 @@
 defmodule Regolix.MixProject do
   use Mix.Project
 
-  @version "0.3.1"
-  @source_url "https://github.com/jtippett/regolix"
+  @version "0.3.3"
+  @source_url "https://github.com/pluralsh/regolix"
 
   def project do
     [

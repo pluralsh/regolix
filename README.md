@@ -173,9 +173,17 @@ and pushes. That kicks off `release.yml`, which builds NIFs for all six targets
 and creates the GitHub release. (The first precompiled release must be a new
 version — `0.3.0` is already on Hex as a source build.)
 
+After the release is available, generate and commit the checksum file. This is
+required for projects that consume Regolix directly from Git:
+
+```bash
+mix rustler_precompiled.download Regolix.Native --all --print
+git add checksum-Elixir.Regolix.Native.exs
+git commit -m "Add vX.Y.Z NIF checksums"
+```
+
 Keep notes under `## [Unreleased]` in `CHANGELOG.md` as you work — the assistant
-rolls them into each release. Don't commit the checksum file or move a published
-tag by hand; the pipeline owns both.
+rolls them into each release. Don't move a published tag by hand.
 
 ## License
 
