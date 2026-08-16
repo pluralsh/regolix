@@ -16,7 +16,7 @@ end
 
 A precompiled NIF is downloaded for your platform — **no Rust toolchain required**
 to use the library. Supported targets: `{x86_64,aarch64}-apple-darwin` and
-`{x86_64,aarch64}-unknown-linux-gnu`. To build from source instead, set
+`{x86_64,aarch64}-unknown-linux-{gnu,musl}`. To build from source instead, set
 `REGOLIX_BUILD=1` before compiling.
 
 ## Usage
@@ -178,7 +178,7 @@ just release          # or, without just:  elixir scripts/release.exs
 It shows the current and published versions, asks for a **patch / minor / major**
 bump (you pick the level — no version numbers to type), rolls the
 `CHANGELOG.md` `[Unreleased]` section into the new version, then commits, tags,
-and pushes. That kicks off `release.yml`, which builds NIFs for all four targets
+and pushes. That kicks off `release.yml`, which builds NIFs for all six targets
 and creates the GitHub release. (The first precompiled release must be a new
 version — `0.3.0` is already on Hex as a source build.)
 
