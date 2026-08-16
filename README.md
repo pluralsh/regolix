@@ -157,16 +157,7 @@ allow if {
 ## Releasing
 
 Releases are automated. Pushing a `vX.Y.Z` tag builds the precompiled NIFs,
-creates a GitHub release, and publishes to Hex — **pausing for a manual approval
-before anything ships**. You never hand-build checksums or re-tag.
-
-**One-time setup.** Hex no longer mints API keys from the CLI (auth is OAuth);
-generate one at [hex.pm/dashboard/keys](https://hex.pm/dashboard/keys) with the
-`api` permission, then store it scoped to the `hex` environment:
-
-```bash
-gh secret set HEX_API_KEY --env hex --repo jtippett/regolix
-```
+and creates a GitHub release. Publishing to Hex is handled separately.
 
 **To cut a release**, run the release assistant from `master` and follow the
 prompts:
@@ -181,11 +172,6 @@ bump (you pick the level — no version numbers to type), rolls the
 and pushes. That kicks off `release.yml`, which builds NIFs for all six targets
 and creates the GitHub release. (The first precompiled release must be a new
 version — `0.3.0` is already on Hex as a source build.)
-
-Then **approve the publish**: open the workflow run → *Review deployments* →
-approve the **`hex`** environment. On approval it generates
-`checksum-Elixir.Regolix.Native.exs` from the released artifacts and runs
-`mix hex.publish`.
 
 Keep notes under `## [Unreleased]` in `CHANGELOG.md` as you work — the assistant
 rolls them into each release. Don't commit the checksum file or move a published

@@ -4,7 +4,7 @@ defmodule Regolix.Native do
   use RustlerPrecompiled,
     otp_app: :regolix,
     crate: "regolix",
-    base_url: "https://github.com/jtippett/regolix/releases/download/v#{@version}",
+    base_url: "https://github.com/pluralsh/regolix/releases/download/v#{@version}",
     version: @version,
     targets: ~w(
       aarch64-apple-darwin
